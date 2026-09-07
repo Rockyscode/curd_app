@@ -1,12 +1,13 @@
-import axios from 'axios';
-import { Todo } from '../types/todo';
+import axios from "axios";
+import { Todo } from "../types/todo";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api/todos';
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://my-todo-app:8080/api/todos";
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
   timeout: 6000,
 });
@@ -14,7 +15,7 @@ const apiClient = axios.create({
 export const todoApi = {
   // Fetch all todos
   getAll: async (): Promise<Todo[]> => {
-    const response = await apiClient.get<Todo[]>('');
+    const response = await apiClient.get<Todo[]>("");
     return response.data;
   },
 
@@ -25,8 +26,8 @@ export const todoApi = {
   },
 
   // Create new todo
-  create: async (todo: Omit<Todo, 'id'>): Promise<Todo> => {
-    const response = await apiClient.post<Todo>('', todo);
+  create: async (todo: Omit<Todo, "id">): Promise<Todo> => {
+    const response = await apiClient.post<Todo>("", todo);
     return response.data;
   },
 
@@ -44,10 +45,10 @@ export const todoApi = {
   // Check health / connection to backend
   checkHealth: async (): Promise<boolean> => {
     try {
-      await apiClient.get('', { timeout: 3000 });
+      await apiClient.get("", { timeout: 3000 });
       return true;
     } catch {
       return false;
     }
-  }
+  },
 };
