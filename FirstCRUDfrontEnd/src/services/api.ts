@@ -1,8 +1,10 @@
 import axios from "axios";
 import { Todo } from "../types/todo";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://my-todo-app:8080/api/todos";
+// const API_BASE_URL =
+//   import.meta.env.VITE_API_URL || "http://my-todo-app:8080/api/todos";
+
+const API_BASE_URL = "http://my-todo-app:8080/api/todos";
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
