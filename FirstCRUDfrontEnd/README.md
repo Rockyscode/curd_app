@@ -44,7 +44,7 @@ npm run build
 
 ## 🔗 Spring Boot API Integration
 
-The frontend connects to the Spring Boot backend at `http://localhost:8080/api/todos`.
+The frontend connects to the Spring Boot backend at `http://localhost:8080/api/todos`. Backend in VM Link `http://129.159.232.131:80/`
 
 | Operation | HTTP Method | Endpoint | Description |
 | :--- | :--- | :--- | :--- |
